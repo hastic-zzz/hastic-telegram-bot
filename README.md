@@ -11,6 +11,8 @@ Tool for delivering notifications from Hastic webhooks to Telegram
 - Configure [Hastic webhooks](https://github.com/hastic/hastic-server/wiki/Webhooks)
 - Get notifications
 
+![image](https://user-images.githubusercontent.com/1022757/60738248-4d11bf00-9f66-11e9-851c-529250f4507d.png)
+
 ## Config example
 ```javascript
 {
