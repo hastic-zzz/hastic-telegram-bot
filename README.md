@@ -1,17 +1,25 @@
 # hastic-telegram-bot
-Tool for delivering notifications from Hastic's webhooks to Telegram
+Tool for delivering notifications from Hastic webhooks to Telegram
 
-Hastic analytic unit webhooks get in this port and handled in a certain way.
-Fields like message and image are extracted from webhooks and sent to the telegram chats. (Chats are indicated in config too).
-Telegram chat is selected according to url of webhook.
+## Getting started
+- Create [Telegram Bot](https://core.telegram.org/bots)
+- Get your [chat ID](https://stackoverflow.com/a/32572159)
+- Add them to `config.json`
+- `npm install`
+- `npm run build`
+- `npm start`
+- Configure [Hastic webhooks](https://github.com/hastic/hastic-server/wiki/Webhooks)
+- Get notifications
 
-Example of config :
-```{
+## Config example
+```javascript
+{
   "port": "12345",
   "host": "127.0.0.1",
-  "chat_ids": {
-    "/": "chat_id_1",
-    "/url_1": "-chat_id_2",
-    "/url_2": "-chat_id_3"
-  }
-}```
+  "chatIds": {
+    "/": "1234567890123",
+    "/test": "-1234567890123"
+  },
+  "token": "123456789:AAHqa17QIUJ3fG42VfzrYg1egJ1pKEUcujE"
+}
+```
