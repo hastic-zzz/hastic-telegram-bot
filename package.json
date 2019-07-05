@@ -1,0 +1,26 @@
+{
+  "name": "hastic-telegram-bot",
+  "version": "0.0.1",
+  "description": "Tool for delivering notifications from Hastic's webhooks to Telegram",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "webpack --mode production --target='node'",
+    "dev": "webpack --mode development --target='node' --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.corpglory.com/hastic/webhook-to-telegram.git"
+  },
+  "author": "CorpGlory Inc.",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "form-data": "^2.4.0",
+    "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  }
+}
