@@ -4,7 +4,7 @@ Tool for delivering notifications from Hastic webhooks to Telegram
 ## Getting started
 - Create [Telegram Bot](https://core.telegram.org/bots)
 - Get your [chat ID](https://stackoverflow.com/a/32572159)
-- Add them to `config.json`
+- Add `chatId` and bot `token` to `config.json`
 - `npm install`
 - `npm run build`
 - `npm start`
@@ -19,6 +19,7 @@ Tool for delivering notifications from Hastic webhooks to Telegram
   "port": "12345",
   "host": "127.0.0.1",
   "chatIds": {
+    // "<endpoint>": "<chat_id>"
     "/": "1234567890123",
     "/test": "-1234567890123"
   },
