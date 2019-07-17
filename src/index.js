@@ -24,9 +24,9 @@ const server = http.createServer((req, res) => {
 
         if(Object.keys(notification).includes('image')) {
           const image = new Buffer(notification.image, 'base64');
-          await bot.sendPhoto(chatId, image, { caption: notification.message });
+          await bot.sendPhoto(chatId, image, { caption: notification.text });
         } else {
-          await bot.sendMessage(chatId, notification.message);
+          await bot.sendMessage(chatId, notification.text);
         }
         console.log(`Successfully sent message to ${chatId}`);
       } catch(e) {
