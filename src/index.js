@@ -23,6 +23,9 @@ const server = http.createServer((req, res) => {
         const chatId = CHAT_IDS_MAPPING[req.url];
 
         const message = notification.text !== undefined ? notification.text : notification.message;
+        if(message === undefined) {
+          throw new Error(`There is no "text" or "message" field in notification: ${body}`);
+        }
 
         if(notification.image !== undefined) {
           const image = new Buffer(notification.image, 'base64');
