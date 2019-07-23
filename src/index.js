@@ -22,11 +22,13 @@ const server = http.createServer((req, res) => {
         const notification = JSON.parse(body);
         const chatId = CHAT_IDS_MAPPING[req.url];
 
-        if(Object.keys(notification).includes('image')) {
+        const message = notification.text !== undefined ? notification.text : notification.message;
+
+        if(notification.image !== undefined) {
           const image = new Buffer(notification.image, 'base64');
-          await bot.sendPhoto(chatId, image, { caption: notification.text });
+          await bot.sendPhoto(chatId, image, { caption: message });
         } else {
-          await bot.sendMessage(chatId, notification.text);
+          await bot.sendMessage(chatId, message);
         }
         console.log(`Successfully sent message to ${chatId}`);
       } catch(e) {
